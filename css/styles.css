@@ -1,0 +1,114 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --index: calc(1vw + 1vh);
+    --color-header: #f4efec;
+    --color-text: #cdc6c3;
+    --gallery-gap: calc(var(--index) * 10)
+}
+
+@font-face {
+    font-family: raleway-c;
+    src: url(../fonts/raleway-regular.woff2);
+}
+
+@font-face {
+    font-family: outfit-c;
+    src: url(../fonts/outfit-regular.woff2);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: outfit-c;
+}
+
+body {
+    background: url(../img/bg.jpg);
+    background-size: 50px;
+    color: #fafafa;
+    font-family: raleway-c; 
+    overflow-x: hidden;
+    /* overflow hidden for block horizontal scroll */
+}
+
+/* will-change the thing that says website that this command has tranform and says to use all functions 
+of commputer to website will show without any lags */
+
+.content, .hero, .main-header, .gallery > * {
+    will-change: transform;
+}
+
+.hero {
+    width: calc(var(--index) * 48);
+    position: absolute;
+    /* position: absolute; for smooth movement of the image */
+    left: 40vw;
+    top: -18vw;
+}
+
+.main-header {
+    height: 100vh;
+}
+
+.container {
+    padding: 0 8vw;
+}
+
+.main-title {
+    font-size: calc(var(--index) * 10);
+    position: absolute;
+    width: min-content;
+    bottom: 12vh;
+    line-height: .9;
+}
+ 
+.gallery {
+    display: flex;
+    padding: calc(var(--index) * 8) 0;
+}
+
+.gallery > * {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.gallery-item {
+    max-width: calc(var(--index) * 22);
+    margin-bottom: var(--gallery-gap);
+    max-height: 90vh;
+    border-radius: 10px;
+}
+
+.gallery-left {
+    margin-top: calc(var(--gallery-gap) * 1.25);
+}
+
+.gallery-right {
+    margin-top: -10vh;
+}
+
+.gallery-right .gallery-item {
+    margin: 0;
+    margin-top: var(--gallery-gap);
+}
+
+.text-block {
+    color: var(--color-text);
+    position: relative;
+}
+
+.text-block-title {
+    font-size: 2rem;
+    line-height: 2.4rem;
+    color: var(--color-header);
+    margin-bottom: 1.5rem;
+}
+
+.text-block-text {
+    line-height:  1.75;
+}
